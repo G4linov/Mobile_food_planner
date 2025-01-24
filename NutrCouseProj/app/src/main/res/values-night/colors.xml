@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_color">#55B735</color>
+    <color name="blue">#5DBAE6</color>
+    <color name="light_blue">#8CD2ff</color>
+    <color name="dark_blue">#009DAD</color>
+    <color name="dirty_blue">#94B8C5</color>
+    <color name="green">#55B735</color>
+    <color name="idk_color">#DCDC45</color>
+    <color name="orange">#CC8A1F</color>
+    <color name="light_green_yellow">#F2D249</color>
+    <color name="purple">#993987</color>
+    <color name="gray_hint">#CCC5A7</color>
+    <color name="white_text">#FFFFFF</color>
+    <color name="meal_block_text">#F4F4F4</color>
+    <color name="meal_block_text_reversed">#2D2D2D</color>
+    <color name="profile_icon_color">#999999</color>
+<!--    <color name="meal_block_text_calories_left">#2D2D2D</color>-->
+
+    <color name="main">#2D2D2D</color>
+    <color name="main_additional">#424242</color>
+    <color name="main_darker">#424242</color>
+    <color name="main_most_dark">#999999</color>
+</resources>

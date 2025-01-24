@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main"
+    tools:context=".activity.ProfileJournalActivity">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_additional"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- Кнопка назад -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="Назад"
+                android:src="@drawable/ic_back" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title_text_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:text="Мой журнал"
+                android:textSize="18sp"
+                android:textColor="@color/main_most_dark"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Правая группа (Поиск и Календарь) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <!-- Иконка настройки -->
+            <ImageButton
+                android:id="@+id/settings_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="Настройки"
+                android:src="@drawable/ic_settings" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- User info -->
+    <LinearLayout
+        android:id="@+id/user_info_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_bar"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <LinearLayout
+            android:id="@+id/avatar"
+            android:layout_width="150dp"
+            android:layout_height="150dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_profile"
+                app:tint="@color/main_additional" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/user_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/age_username_edit_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/age_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="User001"
+                        android:textColor="@color/meal_block_text"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24 года"
+                        android:textColor="@color/meal_block_text"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/progress_bar_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/recieved_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Прогресс:"
+                    android:textStyle="bold"
+                    android:textColor="@color/meal_block_text"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="дней"
+                    android:textColor="@color/meal_block_text"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- User data indicators -->
+    <LinearLayout
+        android:layout_below="@id/user_info_main"
+        android:id="@+id/user_indicators_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="6dp">
+        <LinearLayout
+            android:id="@+id/user_height_block"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:text="Рост:"
+                android:textColor="@color/meal_block_text"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/user_height"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:text="175 см"
+                android:textColor="@color/white_text"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner_32"
+                android:backgroundTint="@color/purple" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/user_weight_block"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:text="Вес:"
+                android:textColor="@color/meal_block_text"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/user_weight"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:text="68 кг"
+                android:textColor="@color/white_text"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="@drawable/rounded_corner_32"
+                android:backgroundTint="@color/blue" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/user_fat_block"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:text="КЖ:"
+                android:textColor="@color/meal_block_text"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/user_fat"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="22 %"
+                android:textStyle="bold"
+                android:textColor="@color/white_text"
+                android:background="@drawable/rounded_corner_32"
+                android:backgroundTint="@color/orange"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- User statistic -->
+    <LinearLayout
+        android:id="@+id/user_statistic_block"
+        android:layout_below="@+id/user_indicators_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/statistic_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Статистика:"
+            android:textColor="@color/meal_block_text"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- График -->
+<!--        <com.github.mikephil.charting.charts.LineChart-->
+<!--            android:id="@+id/statistic_chart"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp" />-->
+
+    </LinearLayout>
+
+    <!-- User achievements -->
+    <LinearLayout
+        android:id="@+id/user_achievements_block"
+        android:layout_below="@id/user_statistic_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Достижения"
+            android:textColor="@color/meal_block_text"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="12dp">
+            <!--                android:src="@drawable/ic_achievement_fire"-->
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/orange"
+                android:padding="8dp" />
+            <!--                android:src="@drawable/ic_achievement_leaf"-->
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/green"
+                android:padding="8dp" />
+            <!--                android:src="@drawable/ic_achievement_water"-->
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/blue"
+                android:padding="8dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Редактировать -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/user_achievements_block"
+        android:layout_above="@+id/bottom_bar"
+        android:layout_height="wrap_content">
+        <Button
+
+            android:id="@+id/edit_button"
+            android:layout_width="250dp"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="76dp"
+
+            android:backgroundTint="@color/idk_color"
+
+            android:gravity="center"
+
+            android:text="Добавить новую запись"
+            android:textColor="@color/main"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <!-- Нижний бар -->
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/main_additional"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <LinearLayout
+            android:id="@+id/button_bookmarks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="4dp">
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Закладки"
+                android:src="@drawable/ic_bookmark" />
+
+        </LinearLayout>
+
+        <!-- Кнопка Дневник -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="4dp">
+
+            <ImageButton
+                android:id="@+id/button_diary"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="Дневник"
+                android:src="@drawable/ic_calendar_v2"
+                android:backgroundTint="@color/main_additional"/>
+
+        </LinearLayout>
+
+        <!-- Кнопка Записи -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="4dp"
+            android:background="@drawable/rounded_corner_32"
+            android:backgroundTint="@color/main">
+
+            <ImageButton
+                android:id="@+id/button_weight_notes"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Журнал"
+                android:src="@drawable/ic_notes" />
+
+        </LinearLayout>
+
+        <!-- Кнопка Отчеты -->
+        <LinearLayout
+            android:id="@+id/button_reports"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="4dp">
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Отчеты"
+                android:src="@drawable/ic_reports" />
+
+        </LinearLayout>
+
+        <!-- Кнопка Профиль -->
+        <LinearLayout
+            android:id="@+id/button_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="4dp">
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Профиль"
+                android:src="@drawable/ic_profile"
+                app:tint="@color/profile_icon_color" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

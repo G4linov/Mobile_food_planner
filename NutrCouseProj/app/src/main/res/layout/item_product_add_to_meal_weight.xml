@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/main"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:id="@+id/additional_block_for_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:paddingVertical="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="top">
+
+            <Button
+                android:gravity="center"
+                android:id="@+id/weight_button"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:text="Вес"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/rounded_corner_login_activity"
+                android:backgroundTint="@color/idk_color"
+                android:textColor="@color/main"
+                android:layout_marginBottom="4dp" />
+
+            <Button
+                android:gravity="center"
+                android:id="@+id/portion_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:padding="6dp"
+                android:text="Порция (300 г.)"
+                android:textSize="12sp"
+                android:background="@drawable/rounded_corner_login_activity"
+                android:textColor="@color/main_most_dark"
+                android:layout_marginEnd="10dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/main_most_dark" />
+
+        <LinearLayout
+            android:paddingVertical="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="top">
+
+            <TextView
+                android:id="@+id/quantity_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Грамм/Мл:"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="@color/main_most_dark" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/main"
+                android:padding="4dp">
+
+                <EditText
+                    android:id="@+id/quantity_value"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/rounded_corner_login_activity"
+                    android:padding="10dp"
+                    android:text="0"
+                    android:gravity="left"
+                    android:textColor="@color/main_most_dark"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/main_most_dark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="6dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="Итого:"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:textColor="@color/main_most_dark" />
+
+                <TextView
+                    android:background="@drawable/rounded_corner_login_activity"
+                    android:id="@+id/total_value"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="0 ккал"
+                    android:textSize="14sp"
+                    android:textColor="@color/main_most_dark" />
+            </LinearLayout>
+
+
+            <ImageButton
+                android:id="@+id/add_to_meal_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/green"
+                android:contentDescription="Add to cart"
+                android:layout_marginStart="8dp"
+                app:tint="@color/main" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

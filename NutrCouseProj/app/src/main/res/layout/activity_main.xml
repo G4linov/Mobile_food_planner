@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/main"
+    android:padding="24dp">
+
+    <ImageView
+        android:layout_width="154dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_logo_with_name"
+        android:layout_marginBottom="32dp"/>
+
+    <EditText
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:hint="Login"
+        android:inputType="text"
+        android:background="@drawable/rounded_corner_login_activity"
+        android:textColor="@color/meal_block_text"
+        android:textColorHint="@color/main_additional"
+        android:padding="12dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/rounded_corner_login_activity"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColor="@color/meal_block_text"
+        android:textColorHint="@color/main_additional" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/main_additional"
+        android:text="Log in"
+        android:textColor="@color/main_most_dark"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginHorizontal="76dp"/>
+
+    <TextView
+        android:id="@+id/register_redirect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:textColor="@color/idk_color"
+        android:textSize="16sp"
+        android:clickable="true" />
+</LinearLayout>

@@ -1,0 +1,845 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main"
+    tools:context=".activity.HomeActivity">
+
+    <!-- Верхняя панель -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_additional"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- Пустое пространство Слева -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/picked_date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:text="18 января"
+                android:textColor="@color/main_most_dark"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Правая группа (Поиск и Календарь) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <!-- Иконка настройки -->
+            <ImageButton
+                android:id="@+id/settings_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="Настройки"
+                android:src="@drawable/ic_settings" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Дни недели -->
+    <LinearLayout
+        android:id="@+id/week_days_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_bar"
+        android:background="@color/main"
+        android:fillViewport="true"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- Пример дня недели с буквой снизу -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/circle_day_1"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/week_day_selector"
+                    android:gravity="center"
+                    android:text="Пн"
+                    android:textColor="@drawable/week_day_text_selector"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- Повторить для остальных дней -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/circle_day_2"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/week_day_selector"
+                    android:gravity="center"
+                    android:text="Вт"
+                    android:textColor="@drawable/week_day_text_selector"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/circle_day_3"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/week_day_selector"
+                    android:gravity="center"
+                    android:text="Ср"
+                    android:textColor="@drawable/week_day_text_selector"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/circle_day_4"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/week_day_selector"
+                    android:gravity="center"
+                    android:text="Чт"
+                    android:textColor="@drawable/week_day_text_selector"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/circle_day_5"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/week_day_selector"
+                    android:gravity="center"
+                    android:text="Пт"
+                    android:textColor="@drawable/week_day_text_selector"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/circle_day_6"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/week_day_selector"
+                    android:gravity="center"
+                    android:text="Сб"
+                    android:textColor="@drawable/week_day_text_selector"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/circle_day_7"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/week_day_selector"
+                    android:gravity="center"
+                    android:text="Вс"
+                    android:textColor="@drawable/week_day_text_selector"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Полоса между объектами-->
+    <LinearLayout
+        android:id="@+id/line_sand_days_bar_and_calories_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/week_days_bar">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="#000000" />
+    </LinearLayout>
+
+    <!-- Цели калорий -->
+    <LinearLayout
+        android:id="@+id/calories_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_sand_days_bar_and_calories_bar"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp">
+
+        <!-- Прогресс бар Общий-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <!-- Текстовые подписи -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="Получено"
+                    android:textColor="@color/meal_block_text"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="Осталось"
+                    android:textColor="@color/meal_block_text"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Прогресс-бары -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Получено -->
+                <TextView
+                    android:id="@+id/received_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/received_bar_background"
+                    android:gravity="center"
+                    android:paddingHorizontal="8dp"
+                    android:text="100"
+                    android:textColor="@color/main"
+                    android:textSize="14sp" />
+
+                <!-- Осталось -->
+                <TextView
+                    android:id="@+id/remaining_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@id/received_value"
+                    android:background="@drawable/remaining_bar_background"
+                    android:gravity="center"
+                    android:paddingHorizontal="8dp"
+                    android:text="3300"
+                    android:textColor="@color/meal_block_text"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- Прогресс бар для Белков (Б) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="16dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="Б"
+                android:textColor="@color/main_most_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Прогресс-бары -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <!-- Получено -->
+                <TextView
+                    android:id="@+id/received_value_protein"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16sp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/received_bar_background_protein"
+                    android:gravity="center"
+                    android:paddingHorizontal="8dp"
+                    android:text="30"
+                    android:textColor="@color/white_text"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <!-- Осталось -->
+                <TextView
+                    android:id="@+id/remaining_value_protein"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@id/received_value_protein"
+                    android:background="@drawable/remaining_bar_background_protein"
+                    android:gravity="center"
+                    android:paddingHorizontal="8dp"
+                    android:text="70"
+                    android:textColor="@color/meal_block_text"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- Прогресс бар для Жиров (Ж) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="16dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="Ж"
+                android:textColor="@color/main_most_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Прогресс-бары -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <!-- Получено -->
+                <TextView
+                    android:id="@+id/received_value_fats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16sp"
+                    android:background="@drawable/received_bar_background_fats"
+                    android:gravity="center"
+                    android:paddingHorizontal="8dp"
+                    android:text="30"
+                    android:textColor="@color/white_text"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <!-- Осталось -->
+                <TextView
+                    android:id="@+id/remaining_value_fats"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@id/received_value_fats"
+                    android:background="@drawable/remaining_bar_background_fats"
+                    android:gravity="center"
+                    android:paddingHorizontal="8dp"
+                    android:text="85"
+                    android:textColor="@color/meal_block_text"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- Прогресс бар для Углеводов (У) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="16dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="У"
+                android:textColor="@color/main_most_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Прогресс-бары -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <!-- Получено -->
+                <TextView
+                    android:id="@+id/received_value_carbohydrate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16sp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/received_bar_background_carbohydrate"
+                    android:gravity="center"
+                    android:paddingHorizontal="8dp"
+                    android:text="30"
+                    android:textColor="@color/white_text"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <!-- Осталось -->
+                <TextView
+                    android:id="@+id/remaining_value_carbohydrate"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@id/received_value_carbohydrate"
+                    android:background="@drawable/remaining_bar_background_carbohydrate"
+                    android:gravity="center"
+                    android:paddingHorizontal="8dp"
+                    android:text="25"
+                    android:textColor="@color/meal_block_text"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Блок с приемами пищи -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_bar"
+        android:layout_below="@+id/calories_block"
+        android:background="@color/main"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <!-- Завтрак -->
+            <LinearLayout
+                android:id="@+id/breakfast_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/orange"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <!-- Основной текст блока -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:text="Завтрак"
+                        android:textColor="@color/meal_block_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/breakfast_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 калорий"
+                        android:textColor="@color/meal_block_text"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/breakfast_findMeal_button"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/rounded_corner"
+                        android:backgroundTint="@color/main"
+                        android:src="@android:drawable/ic_input_add"
+                        app:tint="@color/main_most_dark" />
+                </LinearLayout>
+
+                <!-- Контейнер продуктов -->
+                <LinearLayout
+                    android:id="@+id/breakfast_products_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/main"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Обед -->
+            <LinearLayout
+                android:id="@+id/lunch_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/green"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <!-- Основной текст блока -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:text="Обед"
+                        android:textColor="@color/meal_block_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/lunch_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 калорий"
+                        android:textColor="@color/meal_block_text"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/lunch_findMeal_button"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/rounded_corner"
+                        android:backgroundTint="@color/main"
+                        android:src="@android:drawable/ic_input_add"
+                        app:tint="@color/main_most_dark" />
+                </LinearLayout>
+
+                <!-- Контейнер продуктов -->
+                <LinearLayout
+                    android:id="@+id/lunch_products_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/main"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Перекус -->
+            <LinearLayout
+                android:id="@+id/snack_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/purple"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <!-- Основной текст блока -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:text="Перекус"
+                        android:textColor="@color/meal_block_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/snack_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 калорий"
+                        android:textColor="@color/meal_block_text"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/snack_findMeal_button"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/rounded_corner"
+                        android:backgroundTint="@color/main"
+                        android:src="@android:drawable/ic_input_add"
+                        app:tint="@color/main_most_dark" />
+                </LinearLayout>
+
+                <!-- Контейнер продуктов -->
+                <LinearLayout
+                    android:id="@+id/snack_products_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/main"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Ужин -->
+            <LinearLayout
+                android:id="@+id/dinner_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/dark_blue"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <!-- Основной текст блока -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:text="Ужин"
+                        android:textColor="@color/meal_block_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dinner_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 калорий"
+                        android:textColor="@color/meal_block_text"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/dinner_findMeal_button"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/rounded_corner"
+                        android:backgroundTint="@color/main"
+                        android:src="@android:drawable/ic_input_add"
+                        app:tint="@color/main_most_dark" />
+                </LinearLayout>
+
+                <!-- Контейнер продуктов -->
+                <LinearLayout
+                    android:id="@+id/dinner_products_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/main"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Нижний бар -->
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/main_additional"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <LinearLayout
+            android:id="@+id/button_bookmarks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="4dp">
+
+            <!--            -->
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Закладки"
+                android:src="@drawable/ic_bookmark" />
+
+        </LinearLayout>
+
+        <!-- Кнопка Дневник -->
+        <LinearLayout
+            android:id="@+id/button_diary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_corner_32"
+            android:backgroundTint="@color/main"
+            android:layout_margin="4dp">
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/main"
+                android:contentDescription="Дневник"
+                android:src="@drawable/ic_calendar_v2" />
+
+        </LinearLayout>
+
+        <!-- Кнопка Записи -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="4dp">
+
+            <!--            "-->
+            <ImageButton
+                android:id="@+id/button_weight_notes"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Журнал"
+                android:src="@drawable/ic_notes" />
+
+        </LinearLayout>
+
+        <!-- Кнопка Отчеты -->
+        <LinearLayout
+            android:id="@+id/button_reports"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="4dp">
+            <!--            -->
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Отчеты"
+                android:src="@drawable/ic_reports" />
+
+        </LinearLayout>
+
+        <!-- Кнопка Профиль -->
+        <LinearLayout
+            android:id="@+id/button_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="4dp">
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Профиль"
+                android:src="@drawable/ic_profile"
+                app:tint="@color/profile_icon_color" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

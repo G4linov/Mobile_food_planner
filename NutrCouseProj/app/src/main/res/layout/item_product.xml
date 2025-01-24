@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="4dp">
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Продукт"
+        android:textColor="@color/meal_block_text"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/product_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100 ккал"
+        android:textColor="@color/meal_block_text"
+        android:textSize="16sp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/product_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="200 г"
+        android:textColor="@color/meal_block_text"
+        android:textSize="16sp" />
+</LinearLayout>
